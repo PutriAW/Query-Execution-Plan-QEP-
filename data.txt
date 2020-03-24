@@ -1,0 +1,4 @@
+P 4;B 8192
+Buku;id_buku,judul,genre,pengarang,thn_terbit,penerbit;R 130;n 100000;V 12
+Peminjaman;id_peminjaman,id_anggota,id_buku,jlh,tgl_pinjam,tgl_kembali;R 100;n 2000;V 6
+Anggota;id_anggota,nama_ang,jk_ang,ttl,no_hpAng,email_ang;R 200;n 2000;V 7

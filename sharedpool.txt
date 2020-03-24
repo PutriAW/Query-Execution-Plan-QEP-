@@ -1,0 +1,29 @@
+
+Query :select id_anggota,nama_ang from anggota where id_anggota=190;
+PROJECTION id_anggota,nama_ang, -- on the fly
+SELECTION id_anggota = 190   -- A2
+Anggota        
+Cost : 3.0 Blok
+
+Query :select * from buku;
+PROJECTION id_buku,judul,genre,pengarang,thn_terbit,penerbit, -- on the fly
+Buku        
+Cost : 1588.0 Blok
+
+Query :select id_anggota,nama_ang,id_peminjaman from peminjaman join anggota using (id_anggota);
+PROJECTION id_anggota,id_peminjaman,id_anggota,nama_ang,
+   JOIN Peminjaman.id_anggota = Anggota.id_anggota  -- BNLJ
+Peminjaman        Anggota        
+Cost : 39725.0 Blok
+
+Query :select judul from buku where id_buku=100;
+PROJECTION judul, -- on the fly
+SELECTION id_buku = 100   -- A2
+Buku        
+Cost : 3.0 Blok
+
+Query :select nama_ang,tgl_pinjam from peminjaman join anggota using (id_anggota);
+PROJECTION tgl_pinjam,nama_ang,
+   JOIN Peminjaman.id_anggota = Anggota.id_anggota  -- BNLJ
+Peminjaman        Anggota        
+Cost : 39725.0 Blok
